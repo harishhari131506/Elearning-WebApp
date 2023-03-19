@@ -12,6 +12,6 @@
 Table: users<br>
 Columns:<br>
 ID int AI PK <br>
-NAME varchar(100) <br><br><br>
-EMAIL varchar(100) <br><br>
+NAME varchar(100) <br>
+EMAIL varchar(100) <br>
 PASS varchar(200)<br>
