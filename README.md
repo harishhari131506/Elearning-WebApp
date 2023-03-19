@@ -11,7 +11,7 @@
 - To Handle User Registration and sign in we used MYSQL DataBase with values , <br>
 Table: users<br>
 Columns:<br>
-- ID int AI PK 
-- NAME varchar(100) 
-- EMAIL varchar(100) 
-- PASS varchar(200)
+ID int AI PK <br>
+NAME varchar(100) <br><br><br>
+EMAIL varchar(100) <br><br>
+PASS varchar(200)<br>
