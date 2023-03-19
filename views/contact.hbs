@@ -1,0 +1,208 @@
+<html>
+ <html lang="en">
+   {{> header   }}
+  <body>
+       
+ {{> navbar   }}
+
+
+ <section class="contact" id="contact">
+        <div class="heading">
+            
+            <p style="color: white;">What do you think about our site ?</p> <br>
+        </div>
+        <div class="content">
+            <div class="contactInfo">
+                <h3>Contact Info</h3>
+                <div class="contactInfoBox">
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>Sify Technologies Limited <br>
+                                II Floor, TIDEL Park,<br>
+                                No.4, Rajiv Gandhi Salai,<br>
+                                Taramani Chennai – 600 113, India. </p>
+                         </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Customer Care </h3>
+                            <p>1800 4 19 29 29</p>
+                         </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <h3>For Business Enquiry</h3>
+                            <p>marketing@sifycorp.com</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formBx">
+                <form name="submit-to-google-sheet">
+                    <h3 style="color: #fff;">Message US</h3>
+                    <input type="text" name="Name" class="" placeholder="Full Name">
+                    <input type="email" name="Email" class="" placeholder="Email">
+                    <textarea name="Messages" placeholder="Your Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+                <span id="msg">
+                    
+                </span>
+            </div>
+        </div>
+    </section>
+    <div class="copyright">
+        <p>Copyright &copy 2023 SIFY. All Right Reserve</p>
+    </div>
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbydDijLP4REpuvhOlti8qEq4tMG6tA2Vmna6YrdnarMvNLyTULr6zOXoSKg47mqgvFE/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully"
+            setTimeout(function() {
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        } )
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+</body>
+</html>
+
+<style>
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+section
+{
+    padding: 50px;
+}
+.contact
+{
+    background: linear-gradient(132deg, rgb(2, 106, 122) 0.00%, rgb(242, 78, 163) 100.00%);
+}
+.formBx
+{
+    min-width: 60%;
+}
+.formBx form
+{
+    display: flex;
+    flex-direction: column;
+}
+.formBx form h3, .contactInfo h3
+{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.formBx form input, .formBx form textarea
+{
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: #0b436a;
+    color: #fff;
+    resize: none;
+}
+.formBx form textarea
+{
+    min-height: 200px;
+}
+.formBx form input::placeholder,
+.formBx form textarea::placeholder
+{
+    color: #cec3c3;
+}
+.formBx form input[type="submit"]
+{
+    max-width: 100px;
+    background: #46449e;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.contactInfo {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.contactInfo h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.contactInfoBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1 1 300px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 36px;
+  margin-right: 20px;
+  color: #333;
+}
+
+.text h3 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #333;
+}
+
+.text p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.copyright
+{
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+</style>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Login System With MySQL</title>
+    
+  </head>
+  <body>
+  
+    {{> navbar }}
+
+       <div class="container">
+      <h1>My Courses</h1>
+      <h2>Ongoing Courses</h2>
+      <ul id="ongoing-list"></ul>
+      <h2>Completed Courses</h2>
+      <ul id="completed-list"></ul>
+    </div>
+  </body>
+</html>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(132deg, rgb(34, 181, 254) 0.00%, rgb(255, 186, 214) 100.00%);
+    
+  }
+  
+  h1, h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+  }
+  
+  #ongoing-courses, #completed-courses {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+  }
+  
+  .card {
+    display: flex;
+    width: 90vw;
+     background-color: #fff;
+    align-items:center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  .card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .card .details {
+    flex-grow: 1;
+  }
+  
+  .card h3 {
+    margin: 0;
+  }
+  
+  .card span {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .card.completed {
+    opacity: 0.5;
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .fadeInLeft {
+    animation-name: fadeInLeft;
+  }
+  
+  .fadeInRight {
+    animation-name: fadeInRight;
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+nav{
+  width: 100%; 
+  height:50px;
+  background:white;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo{
+  font-weight:500;
+  font-size: 18px;
+  color:#34495e;
+}
+
+nav .menu a{
+  margin:10px 10px ;
+  text-decoration: none;
+  font-size:18px;
+  color: #000000;
+}
+
+nav .menu a:hover{
+  text-decoration: underline;
+}
+
+    
+</style>
+
+<script>
+    const courses = [
+    {
+      title: "Introduction to JavaScript",
+      image: "https://picsum.photos/id/237/200/200",
+      enrolledDate: "Jan 1, 2022",
+      completed: true
+    },
+    {
+      title: "Intermediate JavaScript",
+      image: "https://picsum.photos/id/238/200/200",
+      enrolledDate: "Feb 1, 2022",
+      completed: true
+    },
+    {
+      title: "Advanced JavaScript",
+      image: "https://picsum.photos/id/239/200/200",
+      enrolledDate: "Mar 1, 2022",
+      completed: false
+    },
+    {
+      title: "Introduction to HTML",
+      image: "https://picsum.photos/id/240/200/200",
+      enrolledDate: "Apr 1, 2022",
+      completed: true
+    },
+    {
+      title: "Introduction to CSS",
+      image: "https://picsum.photos/id/241/200/200",
+      enrolledDate: "May 1, 2022",
+      completed: false
+    }
+  ];
+  
+  const ongoingList = document.getElementById("ongoing-list");
+  const completedList = document.getElementById("completed-list");
+  
+  courses.forEach(course => {
+    const li = document.createElement("li");
+    li.classList.add("card");
+    li.innerHTML = `
+      <img src="${course.image}" alt="${course.title}">
+      <div class="details">
+        <h3>${course.title}</h3>
+        <span>Enrolled on ${course.enrolledDate}</span>
+      </div>
+      <span class="status">${course.completed ? "Completed" : "Ongoing"}</span>
+    `;
+    if (course.completed) {
+      li.classList.add("completed");
+      completedList.appendChild(li);
+    } else {
+      ongoingList.appendChild(li);
+    }
+  });
+  
+  $(document).ready(function() {
+    $(".animated").addClass("animate__animated");
+  });
+  
+</script>

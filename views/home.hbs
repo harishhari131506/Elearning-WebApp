@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header   }}
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+  <body>
+       
+ {{> navbar   }}
+
+  <h1 style="text-align: center;color:white;margin-top:15px">Welcome to Unacademy <br> {{user.NAME}}</h1>
+    <div class="con">
+        <div class="car animated-car">
+          <div class="car-image">
+            <img id="course-image"  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.qapla.it%2Fwp-content%2Fuploads%2F2020%2F07%2Flogocert-webdev.png&f=1&nofb=1&ipt=9cd5342feae63382a5230507fa41a4cb83ff1c928774aa532b4f785c394d5d39&ipo=images" alt="Course Image">
+          </div>
+          <div class="car-details">
+            <h1 class="car-title" style="font-family: 'Oswald', sans-serif;">Course Name : WEB Development<span id="course-name"></span></h1>
+            <ul class="car-list">
+              <li><strong>Uploaded Date: 12/06/2022</strong> <span id="uploaded-date"></span></li>
+              <li><strong>Author ID:1</strong> <span id="author-id"></span></li>
+              <li><button class="enroll-button"> <a style="color:#fff" href="/myprogress">Enroll</a> </button></li>
+            </ul>
+            
+          </div>
+        </div>
+   
+
+
+
+      
+        <div class="car animated-car">
+          <div class="car-image">
+            <img id="course-image"  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.traininginbangalore.com%2Fimages%2Fcourse%2Fdata-science-using-python-training-in-bangalore-tib.jpg&f=1&nofb=1&ipt=d39bfb72400acc52923d4fdfbd941252922b6fde28dee6c829a223c4d03b8685&ipo=images" alt="Course Image">
+          </div>
+          <div class="car-details">
+            <h1 class="car-title"  style="font-family: 'Oswald', sans-serif;">Course Name : Data Science Using Python<span id="course-name"></span></h1>
+            <ul class="car-list">
+              <li><strong>Uploaded Date:15/04/2022</strong> <span id="uploaded-date"></span></li>
+              <li><strong>Author ID: 2 </strong> <span id="author-id"></span></li>
+              <li><button class="enroll-button"><a style="color: #fff;"  href="/myprogress">Enroll</a> </button></li>
+            </ul>
+            
+          </div>
+        </div>
+ 
+
+
+
+        <div class="car animated-car">
+          <div class="car-image">
+            <img id="course-image"  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoreavi.com%2Fwp-content%2Fuploads%2FNeural-Network-Cat-002.jpg&f=1&nofb=1&ipt=5f60d2c15ef7cc157ccc07bbec4fa4e7621572e32680951bda7df82289f8b1f5&ipo=images" alt="Course Image">
+          </div>
+          <div class="car-details">
+            <h1 class="car-title" style="font-family: 'Oswald', sans-serif;">Course Name : Crash Course on Neural Networks<span id="course-name"></span></h1>
+            <ul class="car-list">
+              <li><strong>Uploaded Date : 01/01/2023</strong> <span id="uploaded-date"></span></li>
+              <li><strong>Author ID: 3</strong> <span id="author-id"></span></li>
+              <li><button class="enroll-button"><a style="color: #fff;" href="/myprogress">Enroll</a> </button></li>
+            </ul>
+          </div>
+          </div>
+       
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+
+.car-list{
+  font-family: 'Bona Nova', serif;
+}
+
+.enroll-button {
+display: block;
+width: 30%;
+margin-top: 20px;
+padding: 8px;
+border: none;
+border-radius: 15px;
+background-color: #0095ff;
+color: #ffffff;
+
+font-size: 1em;
+font-family: 'Times New Roman', Times, serif;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+animation: slide-up 1s ease-in-out;
+}
+
+.enroll-button:hover {
+  background-color: #4caf50;
+color: #f7f5f5;
+}
+
+/* conainer styles */
+.con {
+max-width: 65vw;
+margin: 0 auto;
+padding: 30px;
+}
+
+/* car styles */
+.car {
+display: flex;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+animation: fade-in 1s ease-in-out;
+margin-bottom: 10px;
+}
+
+.car-image {
+flex: 0 0 300px;
+position: relative;
+}
+
+.car-image img {
+display: block;
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.car-details {
+flex: 1;
+padding: 20px;
+}
+
+.car-title {
+font-size: 1.5em;
+margin-bottom: 20px;
+}
+
+.car-list {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.car-list li {
+font-size: 1em;
+margin-bottom: 10px;
+}
+
+.car-list li strong {
+font-weight: bold;
+margin-right: 10px;
+}
+
+/* Animations */
+@keyframes fade-in {
+from {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.animated-car {
+animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+</style>
+
+</style>

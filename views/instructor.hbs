@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header   }}
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+  <body>
+       
+ {{> navbar   }}
+
+  
+  <main>
+    <div class="instructor-profile">
+      <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fuser-png-icon-download-icons-logos-emojis-users-2240.png&f=1&nofb=1&ipt=0e93e5a64a1c151a8d18a3dff4f4b2d8cb5b2bea5a97b47f26db65a5abdd5be6&ipo=images" alt="Instructor Image">
+      <h2>Stephen Maverik</h2>
+      <p>Stephane is a solutions architect, consultant and software developer that has a particular interest in all things related to Big Data, Cloud & API. He's also a many-times best seller instructor on Udemy for his courses in AWS and Apache Kafka.</p>
+    </div>
+
+    <div class="courses-section">
+      <h2>Courses by Stephen</h2>
+      <div class="course-list">
+        <div class="course-item">
+          <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.qapla.it%2Fwp-content%2Fuploads%2F2020%2F07%2Flogocert-webdev.png&f=1&nofb=1&ipt=9cd5342feae63382a5230507fa41a4cb83ff1c928774aa532b4f785c394d5d39&ipo=images" alt="Course Image"></a>
+          <div class="course-details">
+            <h3><a href="#">Web Development</a></h3>
+            <p>Web development is the work involved in developing a website for the Internet or an intranet..</p>
+          </div>
+        </div>
+        <!-- Add more course items here -->
+        <div class="course-item">
+          <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.traininginbangalore.com%2Fimages%2Fcourse%2Fdata-science-using-python-training-in-bangalore-tib.jpg&f=1&nofb=1&ipt=d39bfb72400acc52923d4fdfbd941252922b6fde28dee6c829a223c4d03b8685&ipo=images" alt="Course Image"></a>
+          <div class="course-details">
+            <h3><a href="#">Data Science Using Python</a></h3>
+            <p>Data science is an interdisciplinary academic field that uses statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from noisy, structured, and unstructured data. </p>
+          </div>
+        </div>
+        <div class="course-item">
+          <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoreavi.com%2Fwp-content%2Fuploads%2FNeural-Network-Cat-002.jpg&f=1&nofb=1&ipt=5f60d2c15ef7cc157ccc07bbec4fa4e7621572e32680951bda7df82289f8b1f5&ipo=images" alt="Course Image"></a>
+          <div class="course-details">
+            <h3><a href="#">Neural Networks</a></h3>
+            <p>A neural network is a network or circuit of biological neurons, or, in a modern sense, an artificial neural network, composed of artificial neurons or nodes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+    
+<style>
+    /* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(132deg, rgb(255, 206, 236) 0.00%, rgb(151, 150, 240) 100.00%);
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  margin: 20px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+/* Instructor profile styling */
+.instructor-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.instructor-profile img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-profile h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.instructor-profile p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Course list styling */
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-item {
+  position: relative;
+  margin-bottom: 10px;
+  width: calc(33.33% - 20px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  background-color: #fff;
+}
+
+.course-item:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.course-item a {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+
+.course-item:hover img {
+  transform: scale(1.1);
+}
+
+.course-details {
+  padding: 10px;
+}
+
+.course-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.course-details p {
+  margin: 0;
+}
+
+/* Animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.instructor-profile, .course-item {
+  animation: slide-up 0.5s ease forwards;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .course-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .course-item {
+    width: 100%;
+
+</style>
