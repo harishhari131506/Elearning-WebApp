@@ -16,14 +16,14 @@ NAME varchar(100) <br>
 EMAIL varchar(100) <br>
 PASS varchar(200)<br>
 
-- To run the file App we need following modules as mentioned in package.json
-- "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "hbs": "^4.2.0",
-    "jsonwebtoken": "^9.0.0",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.21"
-  }
+- To run the file App we need following modules as mentioned in package.json<br>
+- "dependencies": {<br>
+    "bcryptjs": "^2.4.3",<br>
+    "cookie-parser": "^1.4.6",<br>
+    "dotenv": "^16.0.3",<br>
+    "express": "^4.18.2",<br>
+    "hbs": "^4.2.0",<br>
+    "jsonwebtoken": "^9.0.0",<br>
+    "mysql": "^2.18.1",<br>
+    "nodemon": "^2.0.21"<br>
+  }<br>
